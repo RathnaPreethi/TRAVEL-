@@ -1,0 +1,152 @@
+/* Main container styling */
+.main {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--bodyColor);
+  }
+  
+  /* Section title styling */
+  .secTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .secTitle .title {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    color: var(--textColor);
+    margin: 0;
+    padding-bottom: 0.5rem;
+  }
+  
+  .secTitle .title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--SecondaryColor);
+  }
+  
+  /* Section content grid layout */
+  .secContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  /* Single destination card styling */
+  .singleDestination {
+    background: var(--whiteColor);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+    overflow: hidden;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .singleDestination:hover {
+    background: var(--SecondaryColor);
+    box-shadow: 1 4px 8px rgba(85, 85, 114, 0.549);
+  }
+  
+  .imageDiv {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+  }
+  
+  .imageDiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .imageDiv:hover img {
+    transform: scale(1.1);
+  }
+  
+  .cardInfo {
+    padding: 1rem;
+  }
+  
+  .desTitle {
+    font-size: 1.25rem;
+    color: var(--blackColor);
+    margin-bottom: 0.5rem;
+  }
+  
+  .continent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--greyText);
+    font-size: 0.875rem;
+  }
+  
+  .continent .icon {
+    font-size: 1rem;
+    color: var(--textColor);
+  }
+  
+  .fees {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    border-top: 1px solid var(--greyText);
+    border-bottom: 1px solid var(--greyText);
+  }
+  
+  .fees .grade {
+    font-size: 0.875rem;
+    color: var(--textColor);
+  }
+  
+  .fees .grade small {
+    background-color: var(--PrimaryColor);
+    color: var(--whiteColor);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+  }
+  
+  .fees .price {
+    font-size: 1.5rem;
+    color: var(--blackColor);
+  }
+  
+  .desc {
+    font-size: 0.875rem;
+    color: var(--textColor);
+    margin-bottom: 1rem;
+  }
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--PrimaryColor);
+    color: var(--whiteColor);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: var(--SecondaryColor);
+  }
+  
+  .btn .icon {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+  

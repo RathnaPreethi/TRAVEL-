@@ -1,0 +1,215 @@
+:root {
+    --PrimaryColor: hsl(30, 50%, 40%);
+    --SecondaryColor: hsl(40, 60%, 30%);
+    --gradientColor: linear-gradient(to right, var(--SecondaryColor), var(--PrimaryColor));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 10%);
+    --textColor: hsl(0, 0%, 20%);
+    --whiteColorDream: hsl(0, 0%, 95%);
+    --greyText: rgb(120, 120, 120);
+    --inputColor: rgb(200, 180, 160);
+    --bodyColor: rgb(210, 190, 170);
+    --cardBG: rgb(180, 160, 140);
+}
+
+.home {
+    width: 100%;
+    height: 100vh; /* Ensure full viewport height */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+}
+
+.homeContent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--whiteColor);
+    z-index: 100;
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    mix-blend-mode: hard-light;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.textDiv {
+    padding: 2rem 0;
+}
+
+.smallText {
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.homeTitle {
+    position: relative;
+    font-size: 1.8rem;
+}
+
+.cardDiv {
+    position: relative;
+    padding: 2rem 1rem;
+    background: var(--whiteColor);
+    border-radius: 10px;
+    gap: 1rem;
+}
+
+.label_total {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total {
+    color: var(--textColor);
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.input {
+    height: 40px;
+    padding: 0 1rem;
+    background: var(--inputColor);
+    border-radius: 3rem;
+}
+
+.input input {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.input input::placeholder {
+    font-size: 13px;
+}
+
+.searchOptions {
+    position: absolute;
+    background: var(--gradientColor);
+    width: max-content;
+    bottom: -0.7rem;
+    column-gap: 0.8rem;
+    padding: 5px 1rem;
+    border-radius: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    cursor: pointer;
+}
+
+.searchOptions:hover {
+    background: var(--PrimaryColor);
+}
+
+@media screen and (min-width: 500px) {
+    .textDiv .smallText {
+        font-size: 16px;
+    }
+
+    .homeTitle {
+        font-size: 2.3rem;
+        width: max-content;
+        position: relative;
+    }
+
+    .homeTitle::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        width: 145px;
+        height: 5px;
+        background: var(--SecondaryColor);
+        z-index: -1;
+    }
+
+    .cardDiv {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 660px) {
+    .cardDiv {
+        padding: 2rem 1rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .home {
+        height: 70vh;
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    .home {
+        height: 80vh;
+    }
+
+    .homeContent {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .cardDiv {
+        padding: 2rem 1rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .input {
+        margin-bottom: 1rem;
+    }
+
+    .searchOptions {
+        bottom: -1rem;
+        padding: 8px 1rem;
+    }
+
+    .searchOptions span {
+        font-size: 17px;
+    }
+}
+
+.homeFooterIcons {
+    width: 100%;
+    justify-content: center;
+}
+
+.homeFooterIcons .icon {
+    font-size: 20px;
+    margin: 0 5px;
+    color: var(--whiteColor);
+    font-weight: 600;
+}
+
+.homeFooterIcons .icon:hover {
+    color: var(--PrimaryColor);
+}
